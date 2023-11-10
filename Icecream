@@ -1,0 +1,99 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+import  javafx.util.Pair;
+
+class Result {
+
+    /*
+     * Complete the 'icecreamParlor' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts following parameters:
+     *  1. INTEGER m
+     *  2. INTEGER_ARRAY arr
+     */
+
+      public static Integer icecreamParlor(int m, List<Integer> arr) {
+          List<Integer> result = new ArrayList<>();
+        Map<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < arr.size(); i++) {
+            int currentCost = arr.get(i);
+            int flavor = m - currentCost;
+            //take the prices of each of the chosen flavors must be 2
+            
+            if(flavor[i] == [2]){
+                map.get(currentCost[flavor]);
+            }
+            // look for the sum of money
+            int sumofmoney = m;
+            //the cost for each flavors have to add up to the the sum of money
+            //we get the current cost of the ice cream 
+            flavor.get(currentCost);
+            //go thru the list of flavors looking at the price
+            for (int j = 0; i < flavor(); j++) {
+                int cost = arr.get(j[i]);
+            
+            // go two at a time comparing if there are any pairs of ice cream that add to sum of money 
+            
+            
+            // for each flavor price in the array check it against all the other flavor prices but one at a time. We will check each pair to see if it adds up to the sum of money 
+            for (each[flavor]){
+                if(flavor.cost + flavor.cost[next] = sumofmoney)
+                return true
+                }
+            else{
+                return false
+            
+            }
+            
+
+        return flavor;
+        
+    }
+//ICECREAM
+}
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int t = Integer.parseInt(bufferedReader.readLine().trim());
+
+        IntStream.range(0, t).forEach(tItr -> {
+            try {
+                int m = Integer.parseInt(bufferedReader.readLine().trim());
+
+                int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+                List<Integer> arr = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
+                    .map(Integer::parseInt)
+                    .collect(toList());
+
+                Integer result = Result.icecreamParlor(m, arr);
+                bufferedWriter.write(result.toString() + "\n");
+                
+                // bufferedWriter.write(
+                //     result.stream()
+                //         .map(Object::toString)
+                //         .collect(joining(" "))
+                //     + "\n"
+                // );
+            } catch (IOException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
